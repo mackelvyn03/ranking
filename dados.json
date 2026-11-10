@@ -1,0 +1,54 @@
+{
+  "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
+  "lidoEm": "2026-11-10T11:27:51.478Z",
+  "graficos": {
+    "Black 2026 - Resultado por consultor (R$)": {
+      "vazio": false,
+      "ok": true,
+      "linhas": [
+        {
+          "consultor": "Carlos Bispo",
+          "Parados (R$)": 21127.24,
+          "Perdidos (R$)": 0,
+          "Fechados (R$)": 0
+        },
+        {
+          "consultor": "Kelvyn Gustavo",
+          "Parados (R$)": 76768.5,
+          "Perdidos (R$)": 0,
+          "Fechados (R$)": 0
+        }
+      ]
+    },
+    "Black 2026 - Funil de venda solar em aberto (R$)": {
+      "vazio": false,
+      "ok": true,
+      "etapas": [
+        {
+          "etapa": "Proposta",
+          "valor": 902416.53
+        },
+        {
+          "etapa": "Cotação financiamento",
+          "valor": 667554.73
+        },
+        {
+          "etapa": "Validação técnica",
+          "valor": 649641.37
+        }
+      ]
+    },
+    "Black 2026 - Geração compartilhada por consultor (kWh)": {
+      "vazio": false,
+      "ok": true,
+      "linhas": [
+        {
+          "consultor": "Kelvyn Gustavo",
+          "Fechados (kWh)": 0,
+          "Parados (kWh)": 350,
+          "Perdidos (kWh)": 0
+        }
+      ]
+    }
+  }
+}
