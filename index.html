@@ -432,6 +432,7 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
     const by = new Map(names.map((n) => [n, { nome: n, solar: 0, solarPerd: 0, solarPar: 0, gd: 0, gdPerd: 0, gdPar: 0 }]));
     for (const r of (chart('resultado por consultor') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.solar += pick(r, 'fechad'); a.solarPerd += pick(r, 'perdid'); a.solarPar += pick(r, 'parad'); }
     for (const r of (chart('geracao compartilhada') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.gd += pick(r, 'fechad'); a.gdPerd += pick(r, 'perdid'); a.gdPar += pick(r, 'parad'); }
+    for (const r of (chart('o&m') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.solar += pick(r, 'fechad'); } // vendas O&M somam no solar
     return [...by.values()].sort((a, b) => b.solar - a.solar || b.gd - a.gd || a.nome.localeCompare(b.nome, 'pt-BR'));
   }
 
