@@ -260,6 +260,16 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
 .alert .a-val { font-family: var(--font-display); font-weight: 700; font-size: 1.5em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .alert.parado .a-val { color: var(--sun); }
 .alert.perdido .a-val { color: var(--bad); }
+.props { display: flex; flex-direction: column; gap: .7em; margin-top: .6em; padding-top: 1em; border-top: 1px solid var(--line); }
+.props-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .3em 1em; }
+.props-head h2 { font-size: 1.1em; }
+.props-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .45em; }
+.prop { display: grid; grid-template-columns: 2.2em minmax(6em, 10em) minmax(0, 1fr) auto; align-items: center; gap: .8em; }
+.prop .p-pos { font-family: var(--font-display); font-weight: 700; font-size: 1.3em; color: var(--muted); }
+.prop.first .p-pos { color: var(--sky); }
+.prop .p-name { font-family: var(--font-display); font-weight: 600; font-size: 1.3em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prop .bar i { background: linear-gradient(90deg, color-mix(in srgb, var(--sky) 55%, var(--panel)), var(--sky)); }
+.prop .p-val { font-family: var(--font-display); font-weight: 700; font-size: 1.5em; font-variant-numeric: tabular-nums; min-width: 2ch; text-align: right; }
 .src-note { font-size: .8em; color: var(--muted); margin: 0; }
 .sync-card dl { display: grid; grid-template-columns: auto 1fr; gap: .5em 1em; margin: 1em 0 0; font-size: .92em; }
 .sync-card dt { color: var(--muted); }
@@ -310,6 +320,11 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
       <div class="cols" aria-hidden="true"><span>Pos.</span><span>Consultor</span><span>Solar fechado</span><span>GD fechada</span></div>
       <ol id="rankList"></ol>
       <p class="empty" id="rankEmpty">Carregando o ranking…</p>
+      <div class="props" aria-labelledby="propT">
+        <div class="props-head"><h2 id="propT">Ranking · propostas montadas</h2><span class="note" id="propNote">Propostas criadas no SunHub desde 03/11</span></div>
+        <ol class="props-list" id="propList"></ol>
+        <p class="empty" id="propEmpty">Aguardando o SunHub.</p>
+      </div>
     </section>
 
     <aside class="side">
@@ -519,7 +534,29 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
     setTimeout(() => { t.hidden = true; setTimeout(nextToast, 400); }, 6000);
   }
 
-  function renderAll() { const rows = aggregate(); renderRanking(rows); renderSide(rows); tick(); return rows; }
+  function renderProps() {
+    const names = consultants();
+    const c = chart('propostas');
+    const by = new Map(names.map((n) => [n, 0]));
+    for (const r of (c && c.linhas) || []) {
+      if (/inativo/i.test(r.consultor || '')) continue;
+      const n = matchName(r.consultor, names); if (!n) continue;
+      const k = Object.keys(r).find((x) => x !== 'consultor');
+      by.set(n, by.get(n) + (Number(r[k]) || 0));
+    }
+    const rows = [...by.entries()].map(([nome, q]) => ({ nome, q })).sort((a, b) => b.q - a.q || a.nome.localeCompare(b.nome, 'pt-BR'));
+    const ul = $('#propList'); ul.replaceChildren();
+    const max = Math.max(1, ...rows.map((r) => r.q));
+    rows.forEach((r, i) => {
+      const li = el('li', 'prop' + (i === 0 && r.q > 0 ? ' first' : ''));
+      const bar = el('div', 'bar'); const bi = el('i'); bi.style.width = (r.q ? Math.max(3, r.q / max * 100) : 0) + '%'; bar.append(bi);
+      li.append(el('span', 'p-pos', (i + 1) + 'º'), el('span', 'p-name', r.nome), bar, el('span', 'p-val', String(r.q)));
+      ul.append(li);
+    });
+    $('#propEmpty').hidden = !!c;
+    ul.hidden = !c;
+  }
+  function renderAll() { const rows = aggregate(); renderRanking(rows); renderSide(rows); renderProps(); tick(); return rows; }
 
   let lastStamp = null;
   async function getJson(path) { const r = await fetch(path + '?t=' + Date.now(), { cache: 'no-store' }); if (!r.ok) throw new Error(path + ' ' + r.status); return r.json(); }
