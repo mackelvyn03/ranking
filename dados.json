@@ -1,6 +1,6 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-12T17:15:28.252Z",
+  "lidoEm": "2026-11-12T17:53:14.223Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
@@ -35,11 +35,11 @@
         },
         {
           "etapa": "Proposta",
-          "valor": 1857501.79
+          "valor": 1846701.79
         },
         {
           "etapa": "Cotação financiamento",
-          "valor": 876475.34
+          "valor": 887275.34
         },
         {
           "etapa": "Orçamento Distribuidora",
@@ -78,6 +78,32 @@
           "Parados (kWh)": 0,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 2168.5
+        }
+      ],
+      "ok": true
+    },
+    "Black 2026 - Propostas por consultor": {
+      "vazio": false,
+      "linhas": [
+        {
+          "consultor": "Carlos Bispo",
+          "Propostas montadas": 9
+        },
+        {
+          "consultor": "Junior",
+          "Propostas montadas": 5
+        },
+        {
+          "consultor": "Kelvyn Gustavo",
+          "Propostas montadas": 3
+        },
+        {
+          "consultor": "William Dias",
+          "Propostas montadas": 2
+        },
+        {
+          "consultor": "Wilson",
+          "Propostas montadas": 3
         }
       ],
       "ok": true
