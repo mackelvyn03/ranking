@@ -259,6 +259,10 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
 .alert .a-lbl { font-size: .72em; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
 .alert .a-val { font-family: var(--font-display); font-weight: 700; font-size: 1.5em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .alert.parado .a-val { color: var(--sun); }
+.alert.aberto { grid-column: 1 / -1; }
+.alert.aberto .a-val { color: var(--fg); }
+.row .fig .sub .open { color: var(--fg); font-weight: 600; }
+.row .fig .sub { white-space: normal; }
 .alert.perdido .a-val { color: var(--bad); }
 .props { display: flex; flex-direction: column; gap: .7em; margin-top: .6em; padding-top: 1em; border-top: 1px solid var(--line); }
 .props-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .3em 1em; }
@@ -345,6 +349,7 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
         <ul class="stages" id="stageList"></ul>
         <p class="empty" id="stageEmpty">Nenhum negócio em aberto no funil.</p>
         <div class="alerts">
+          <div class="alert aberto"><span class="a-lbl">Em aberto na Black</span><span class="a-val" id="aAberto">—</span></div>
           <div class="alert parado"><span class="a-lbl">Parados 7+ dias</span><span class="a-val" id="aParado">—</span></div>
           <div class="alert perdido"><span class="a-lbl">Perdidos na campanha</span><span class="a-val" id="aPerdido">—</span></div>
         </div>
@@ -444,10 +449,10 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
   function matchName(full, names) { const f = norm(full); return names.find((n) => f === norm(n) || f.split(/\s+/)[0] === norm(n).split(/\s+/)[0]) || null; }
   function aggregate() {
     const names = consultants();
-    const by = new Map(names.map((n) => [n, { nome: n, solar: 0, solarPerd: 0, solarPar: 0, gd: 0, gdPerd: 0, gdPar: 0 }]));
-    for (const r of (chart('resultado por consultor') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.solar += pick(r, 'fechad'); a.solarPerd += pick(r, 'perdid'); a.solarPar += pick(r, 'parad'); }
-    for (const r of (chart('geracao compartilhada') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.gd += pick(r, 'fechad'); a.gdPerd += pick(r, 'perdid'); a.gdPar += pick(r, 'parad'); }
-    for (const r of (chart('o&m') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.solar += pick(r, 'fechad'); } // vendas O&M somam no solar
+    const by = new Map(names.map((n) => [n, { nome: n, solar: 0, solarPerd: 0, solarPar: 0, solarAb: 0, gd: 0, gdPerd: 0, gdPar: 0, gdAb: 0 }]));
+    for (const r of (chart('resultado por consultor') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.solar += pick(r, 'fechad'); a.solarPerd += pick(r, 'perdid'); a.solarPar += pick(r, 'parad'); a.solarAb += pick(r, 'em aberto'); }
+    for (const r of (chart('geracao compartilhada') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.gd += pick(r, 'fechad'); a.gdPerd += pick(r, 'perdid'); a.gdPar += pick(r, 'parad'); a.gdAb += pick(r, 'em aberto'); }
+    for (const r of (chart('o&m') || {}).linhas || []) { const n = matchName(r.consultor, names); if (!n) continue; const a = by.get(n); a.solar += pick(r, 'fechad'); a.solarAb += pick(r, 'em aberto'); } // vendas O&M somam no solar
     return [...by.values()].sort((a, b) => b.solar - a.solar || b.gd - a.gd || a.nome.localeCompare(b.nome, 'pt-BR'));
   }
 
@@ -462,12 +467,14 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
     const fg = el('div', 'fig gd'); const fgB = el('span', 'big'); const fgS = el('span', 'sub'); fg.append(fgB, fgS);
     li.append(pos, who, fs, fg); li._refs = { pos, badge, bi, fsB, fsS, fgB, fgS }; return li;
   }
-  function subLine(target, parado, perdido) {
+  function subLine(target, aberto, parado, perdido, fmt) {
     target.replaceChildren();
-    if (!parado && !perdido) { target.textContent = 'nada parado ou perdido'; return; }
-    if (parado) target.append(el('span', 'warn', brl.format(parado) + ' parado'));
-    if (parado && perdido) target.append(' · ');
-    if (perdido) target.append(el('span', 'lost', brl.format(perdido) + ' perdido'));
+    if (!aberto && !parado && !perdido) { target.textContent = 'nada em aberto'; return; }
+    const parts = [];
+    if (aberto) parts.push(el('span', 'open', fmt(aberto) + ' em aberto'));
+    if (parado) parts.push(el('span', 'warn', fmt(parado) + ' parado'));
+    if (perdido) parts.push(el('span', 'lost', fmt(perdido) + ' perdido'));
+    parts.forEach((p, i) => { if (i) target.append(' · '); target.append(p); });
   }
   function renderRanking(rows) {
     const list = $('#rankList'), empty = $('#rankEmpty');
@@ -482,8 +489,8 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
       const R = li._refs; R.pos.textContent = (i + 1) + 'º';
       const isFirst = i === 0 && r.solar > 0; li.classList.toggle('first', isFirst); R.badge.hidden = !isFirst;
       R.bi.style.width = (r.solar > 0 ? Math.max(2, (r.solar / leader) * 100) : 0) + '%';
-      R.fsB.textContent = brl.format(r.solar); subLine(R.fsS, r.solarPar, r.solarPerd);
-      R.fgB.textContent = num1.format(r.gd / 1000); R.fgS.textContent = 'MWh' + (r.gdPar ? ' · ' + mwhTxt(r.gdPar) + ' parado' : '');
+      R.fsB.textContent = brl.format(r.solar); subLine(R.fsS, r.solarAb, r.solarPar, r.solarPerd, brl.format);
+      R.fgB.textContent = num1.format(r.gd / 1000); R.fgS.textContent = 'MWh' + (r.gdAb ? ' · ' + mwhTxt(r.gdAb) + ' em aberto' : '') + (r.gdPar ? ' · ' + mwhTxt(r.gdPar) + ' parado' : '');
       if (list.children[i] !== li) list.insertBefore(li, list.children[i] || null);
     });
     if (!reduceMotion && typeof Element.prototype.animate === 'function') {
@@ -509,6 +516,7 @@ tr.editing td { background: color-mix(in srgb, var(--sun) 8%, transparent); }
     const ul = $('#stageList'); ul.replaceChildren(); const max = Math.max(1, ...stages.map((s) => s.valor));
     for (const s of stages) { const li = el('li', 'stage'); li.append(el('span', 's-name', s.etapa), el('span', 's-val', brl.format(s.valor))); const bar = el('div', 'bar'); const i = el('i'); i.style.width = Math.max(2, (s.valor / max) * 100) + '%'; bar.append(i); li.append(bar); ul.append(li); }
     $('#stageEmpty').hidden = !ok || stages.length > 0;
+    $('#aAberto').textContent = ok ? brl.format(rows.reduce((s, r) => s + r.solarAb, 0)) : '—';
     $('#aParado').textContent = ok ? brl.format(rows.reduce((s, r) => s + r.solarPar, 0)) : '—';
     $('#aPerdido').textContent = ok ? brl.format(rows.reduce((s, r) => s + r.solarPerd, 0)) : '—';
     if (cfg.nome) { $('#campName').textContent = cfg.nome; document.title = 'Ranking · ' + cfg.nome; }
