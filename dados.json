@@ -1,16 +1,16 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-12T19:15:32.457Z",
+  "lidoEm": "2026-11-12T20:13:36.958Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Em aberto (R$)": 208610.2,
+          "Em aberto (R$)": 188075.8,
           "Parados (R$)": 116571.73,
           "Perdidos (R$)": 0,
-          "Fechados (R$)": 54500
+          "Fechados (R$)": 74500
         },
         {
           "consultor": "Kelvyn Gustavo",
@@ -34,7 +34,7 @@
       "etapas": [
         {
           "etapa": "Validação técnica",
-          "valor": 2773448.27
+          "valor": 2752913.87
         },
         {
           "etapa": "Proposta",
