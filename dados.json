@@ -1,6 +1,6 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-12T14:17:19.516Z",
+  "lidoEm": "2026-11-12T17:15:28.252Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
@@ -31,15 +31,15 @@
       "etapas": [
         {
           "etapa": "Validação técnica",
-          "valor": 2722315.17
+          "valor": 2773448.27
         },
         {
           "etapa": "Proposta",
-          "valor": 1816596.42
+          "valor": 1857501.79
         },
         {
           "etapa": "Cotação financiamento",
-          "valor": 922908.44
+          "valor": 876475.34
         },
         {
           "etapa": "Orçamento Distribuidora",
