@@ -1,24 +1,27 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-12T17:53:14.223Z",
+  "lidoEm": "2026-11-12T18:15:12.156Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
       "linhas": [
         {
           "consultor": "Carlos Bispo",
+          "Em aberto (R$)": 208610.2,
           "Parados (R$)": 21127.24,
           "Perdidos (R$)": 0,
           "Fechados (R$)": 54500
         },
         {
           "consultor": "Kelvyn Gustavo",
+          "Em aberto (R$)": 85714.92,
           "Parados (R$)": 28221.63,
           "Perdidos (R$)": 0,
           "Fechados (R$)": 0
         },
         {
           "consultor": "Junior",
+          "Em aberto (R$)": 0,
           "Parados (R$)": 0,
           "Perdidos (R$)": 0,
           "Fechados (R$)": 17720.99
@@ -57,15 +60,24 @@
       "linhas": [
         {
           "consultor": "Carlos Bispo",
+          "Em aberto (kWh)": 3700,
           "Parados (kWh)": 3400,
           "Perdidos (kWh)": 340,
           "Fechados (kWh)": 0
         },
         {
           "consultor": "Kelvyn Gustavo",
+          "Em aberto (kWh)": 800,
           "Parados (kWh)": 800,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 5000
+        },
+        {
+          "consultor": "William Dias",
+          "Em aberto (kWh)": 630,
+          "Parados (kWh)": 0,
+          "Perdidos (kWh)": 0,
+          "Fechados (kWh)": 0
         }
       ],
       "ok": true
@@ -75,6 +87,7 @@
       "linhas": [
         {
           "consultor": "Junior",
+          "Em aberto (kWh)": 0,
           "Parados (kWh)": 0,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 2168.5
