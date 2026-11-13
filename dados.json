@@ -1,14 +1,14 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-13T17:15:23.024Z",
+  "lidoEm": "2026-11-13T18:14:50.040Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Em aberto (R$)": 188075.8,
-          "Parados (R$)": 188075.8,
+          "Em aberto (R$)": 185966.51,
+          "Parados (R$)": 169506.36,
           "Perdidos (R$)": 0,
           "Fechados (R$)": 74500
         },
@@ -24,7 +24,7 @@
           "Em aberto (R$)": 0,
           "Parados (R$)": 0,
           "Perdidos (R$)": 0,
-          "Fechados (R$)": 17720.99
+          "Fechados (R$)": 17514.79
         }
       ],
       "ok": true
@@ -38,11 +38,11 @@
         },
         {
           "etapa": "Proposta",
-          "valor": 1843383.82
+          "valor": 1659078.22
         },
         {
           "etapa": "Cotação financiamento",
-          "valor": 887275.34
+          "valor": 920663.2
         },
         {
           "etapa": "Orçamento Distribuidora",
@@ -60,9 +60,9 @@
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Em aberto (kWh)": 3700,
+          "Em aberto (kWh)": 3400,
           "Parados (kWh)": 3400,
-          "Perdidos (kWh)": 340,
+          "Perdidos (kWh)": 640,
           "Fechados (kWh)": 0
         },
         {
@@ -104,7 +104,7 @@
         },
         {
           "consultor": "Junior",
-          "Propostas montadas": 5
+          "Propostas montadas": 6
         },
         {
           "consultor": "Kelvyn Gustavo",
@@ -117,6 +117,60 @@
         {
           "consultor": "Wilson",
           "Propostas montadas": 3
+        }
+      ],
+      "ok": true
+    },
+    "Black 2026 - Sistema Solar (kWp)": {
+      "vazio": false,
+      "linhas": [
+        {
+          "consultor": "ALINE ARAUJO DEBEUS",
+          "Propostas perdidas (kWp)": 5748.94,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Carlos Bispo",
+          "Propostas perdidas (kWp)": 32.24,
+          "Propostas em aberto(kWp)": 87.42,
+          "Propostas ganhas(kWp)": 31
+        },
+        {
+          "consultor": "José Carlos (CHIMBAS)",
+          "Propostas perdidas (kWp)": 2.55,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Junior",
+          "Propostas perdidas (kWp)": 98.05,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 4.83
+        },
+        {
+          "consultor": "Kelvyn Gustavo",
+          "Propostas perdidas (kWp)": 32.86,
+          "Propostas em aberto(kWp)": 33.48,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Marcos Buganame",
+          "Propostas perdidas (kWp)": 928.02,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Mateus G",
+          "Propostas perdidas (kWp)": 31.68,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Wilson",
+          "Propostas perdidas (kWp)": 0,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
         }
       ],
       "ok": true
