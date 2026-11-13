@@ -1,0 +1,39 @@
+name: Atualiza dados do SunHub
+
+on:
+  # schedule:   (liga depois de testar a chave)
+  #   - cron: "*/10 * * * *"
+  workflow_dispatch: {}      # botão "Run workflow" na aba Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualiza-sunhub
+  cancel-in-progress: false
+
+jobs:
+  atualiza:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Lê o painel do SunHub e gera dados.json
+        env:
+          PLOOMES_USER_KEY: ${{ secrets.PLOOMES_USER_KEY }}
+        run: node scripts/atualiza-sunhub.mjs
+
+      - name: Commit do dados.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados.json
+          if git diff --cached --quiet; then echo "Nada a gravar."; exit 0; fi
+          git commit -m "Atualiza dados do SunHub (automático $(date -u +'%d/%m %H:%M') UTC)"
+          git pull --rebase --autostash
+          git push
