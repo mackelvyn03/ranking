@@ -1,6 +1,6 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-13T19:15:42.822Z",
+  "lidoEm": "2026-11-14T12:15:31.207Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
@@ -8,7 +8,7 @@
         {
           "consultor": "Carlos Bispo",
           "Em aberto (R$)": 185966.51,
-          "Parados (R$)": 169506.36,
+          "Parados (R$)": 185966.51,
           "Perdidos (R$)": 0,
           "Fechados (R$)": 74500
         },
