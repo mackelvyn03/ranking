@@ -1,13 +1,13 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-17T18:14:57.753Z",
+  "lidoEm": "2026-11-17T19:16:03.828Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Em aberto (R$)": 237890.9,
+          "Em aberto (R$)": 248781.78,
           "Parados (R$)": 219321.46,
           "Perdidos (R$)": 0,
           "Fechados (R$)": 92014.79
@@ -38,7 +38,7 @@
         },
         {
           "etapa": "Proposta",
-          "valor": 1250510.27
+          "valor": 1261401.15
         },
         {
           "etapa": "Cotação financiamento",
@@ -107,7 +107,7 @@
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Propostas montadas": 13
+          "Propostas montadas": 14
         },
         {
           "consultor": "Junior",
@@ -140,7 +140,7 @@
         {
           "consultor": "Carlos Bispo",
           "Propostas perdidas (kWp)": 326.87,
-          "Propostas em aberto(kWp)": 119.66,
+          "Propostas em aberto(kWp)": 124,
           "Propostas ganhas(kWp)": 37.2
         },
         {
