@@ -1,6 +1,6 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-23T19:15:16.931Z",
+  "lidoEm": "2026-11-23T20:15:08.372Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
@@ -67,7 +67,7 @@
         },
         {
           "consultor": "Kelvyn Gustavo",
-          "Em aberto (kWh)": 800,
+          "Em aberto (kWh)": 1130,
           "Parados (kWh)": 800,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 5000
@@ -115,7 +115,7 @@
         },
         {
           "consultor": "Kelvyn Gustavo",
-          "Propostas montadas": 9
+          "Propostas montadas": 11
         },
         {
           "consultor": "William Dias",
@@ -133,43 +133,43 @@
       "linhas": [
         {
           "consultor": "ALINE ARAUJO DEBEUS",
-          "Propostas perdidas (kWp)": 5748.94,
-          "Propostas em aberto(kWp)": 0,
-          "Propostas ganhas(kWp)": 0
-        },
-        {
-          "consultor": "Carlos Bispo",
           "Propostas perdidas (kWp)": 334.93,
           "Propostas em aberto(kWp)": 265.98,
           "Propostas ganhas(kWp)": 37.2
         },
         {
-          "consultor": "José Carlos (CHIMBAS)",
+          "consultor": "Carlos Bispo",
           "Propostas perdidas (kWp)": 2.55,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         },
         {
-          "consultor": "Junior",
+          "consultor": "José Carlos (CHIMBAS)",
           "Propostas perdidas (kWp)": 98.05,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 4.83
         },
         {
-          "consultor": "Kelvyn Gustavo",
+          "consultor": "Junior",
           "Propostas perdidas (kWp)": 165.17,
           "Propostas em aberto(kWp)": 29.14,
           "Propostas ganhas(kWp)": 4.34
         },
         {
-          "consultor": "Marcos Buganame",
+          "consultor": "Kelvyn Gustavo",
           "Propostas perdidas (kWp)": 928.02,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         },
         {
-          "consultor": "Mateus G",
+          "consultor": "Marcos Buganame",
           "Propostas perdidas (kWp)": 31.68,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Mateus G",
+          "Propostas perdidas (kWp)": 5304.56,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         },
