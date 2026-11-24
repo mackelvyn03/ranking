@@ -1,22 +1,22 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-24T17:19:56.632Z",
+  "lidoEm": "2026-11-24T18:10:02.701Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Em aberto (R$)": 556824.09,
-          "Parados (R$)": 556824.09,
+          "Em aberto (R$)": 623299.68,
+          "Parados (R$)": 530925.39,
           "Perdidos (R$)": 20070.88,
           "Fechados (R$)": 92014.79
         },
         {
           "consultor": "Kelvyn Gustavo",
-          "Em aberto (R$)": 131871.49,
-          "Parados (R$)": 131871.49,
-          "Perdidos (R$)": 0,
+          "Em aberto (R$)": 122219.3,
+          "Parados (R$)": 122219.3,
+          "Perdidos (R$)": 9652.19,
           "Fechados (R$)": 10800
         },
         {
@@ -38,11 +38,11 @@
         },
         {
           "etapa": "Proposta",
-          "valor": 1332293.31
+          "valor": 1389116.71
         },
         {
           "etapa": "Cotação financiamento",
-          "valor": 1059058.73
+          "valor": 992583.14
         },
         {
           "etapa": "Orçamento Distribuidora",
@@ -94,7 +94,7 @@
         },
         {
           "consultor": "Junior",
-          "Em aberto (kWh)": 0,
+          "Em aberto (kWh)": 10878.97,
           "Parados (kWh)": 0,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 2168.5
@@ -107,7 +107,7 @@
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Propostas montadas": 18
+          "Propostas montadas": 19
         },
         {
           "consultor": "Junior",
