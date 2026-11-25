@@ -1,6 +1,6 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-25T18:15:12.929Z",
+  "lidoEm": "2026-11-25T19:15:03.772Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
@@ -140,43 +140,43 @@
       "linhas": [
         {
           "consultor": "ALINE ARAUJO DEBEUS",
-          "Propostas perdidas (kWp)": 5748.94,
-          "Propostas em aberto(kWp)": 0,
-          "Propostas ganhas(kWp)": 0
-        },
-        {
-          "consultor": "Carlos Bispo",
           "Propostas perdidas (kWp)": 334.93,
           "Propostas em aberto(kWp)": 306.9,
           "Propostas ganhas(kWp)": 37.2
         },
         {
-          "consultor": "José Carlos (CHIMBAS)",
+          "consultor": "Carlos Bispo",
           "Propostas perdidas (kWp)": 2.55,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         },
         {
-          "consultor": "Junior",
+          "consultor": "José Carlos (CHIMBAS)",
           "Propostas perdidas (kWp)": 98.05,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 4.83
         },
         {
-          "consultor": "Kelvyn Gustavo",
+          "consultor": "Junior",
           "Propostas perdidas (kWp)": 168.89,
           "Propostas em aberto(kWp)": 31.62,
           "Propostas ganhas(kWp)": 4.34
         },
         {
-          "consultor": "Marcos Buganame",
+          "consultor": "Kelvyn Gustavo",
           "Propostas perdidas (kWp)": 928.02,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         },
         {
-          "consultor": "Mateus G",
+          "consultor": "Marcos Buganame",
           "Propostas perdidas (kWp)": 31.68,
+          "Propostas em aberto(kWp)": 0,
+          "Propostas ganhas(kWp)": 0
+        },
+        {
+          "consultor": "Mateus G",
+          "Propostas perdidas (kWp)": 5304.56,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         },
