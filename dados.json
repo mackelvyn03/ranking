@@ -1,6 +1,6 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-25T17:49:03.008Z",
+  "lidoEm": "2026-11-25T18:15:12.929Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
@@ -98,6 +98,13 @@
           "Parados (kWh)": 0,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 2168.5
+        },
+        {
+          "consultor": "Wilson",
+          "Em aberto (kWh)": 5976,
+          "Parados (kWh)": 0,
+          "Perdidos (kWh)": 0,
+          "Fechados (kWh)": 0
         }
       ],
       "ok": true
@@ -123,7 +130,7 @@
         },
         {
           "consultor": "Wilson",
-          "Propostas montadas": 11
+          "Propostas montadas": 13
         }
       ],
       "ok": true
