@@ -1,14 +1,14 @@
 {
   "fonte": "SunHub · painel (Kelvyn) Black 2026 - Ranking automático",
-  "lidoEm": "2026-11-26T23:15:17.125Z",
+  "lidoEm": "2026-11-27T15:11:18.310Z",
   "graficos": {
     "Black 2026 - Resultado por consultor (R$)": {
       "vazio": false,
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Em aberto (R$)": 610352.15,
-          "Parados (R$)": 597400.98,
+          "Em aberto (R$)": 1107756.15,
+          "Parados (R$)": 1107756.15,
           "Perdidos (R$)": 20070.88,
           "Fechados (R$)": 117913.49
         },
@@ -42,7 +42,7 @@
         },
         {
           "etapa": "Cotação financiamento",
-          "valor": 992583.14
+          "valor": 1241285.14
         },
         {
           "etapa": "Orçamento Distribuidora",
@@ -63,11 +63,11 @@
           "Em aberto (kWh)": 3400,
           "Parados (kWh)": 3400,
           "Perdidos (kWh)": 640,
-          "Fechados (kWh)": 0
+          "Fechados (kWh)": 330
         },
         {
           "consultor": "Kelvyn Gustavo",
-          "Em aberto (kWh)": 1130,
+          "Em aberto (kWh)": 800,
           "Parados (kWh)": 800,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 5000
@@ -102,7 +102,7 @@
         {
           "consultor": "Wilson",
           "Em aberto (kWh)": 5976,
-          "Parados (kWh)": 0,
+          "Parados (kWh)": 5976,
           "Perdidos (kWh)": 0,
           "Fechados (kWh)": 0
         }
@@ -114,7 +114,7 @@
       "linhas": [
         {
           "consultor": "Carlos Bispo",
-          "Propostas montadas": 20
+          "Propostas montadas": 22
         },
         {
           "consultor": "Junior",
@@ -122,7 +122,7 @@
         },
         {
           "consultor": "Kelvyn Gustavo",
-          "Propostas montadas": 13
+          "Propostas montadas": 12
         },
         {
           "consultor": "William Dias",
@@ -147,7 +147,7 @@
         {
           "consultor": "Carlos Bispo",
           "Propostas perdidas (kWp)": 341.13,
-          "Propostas em aberto(kWp)": 289.54,
+          "Propostas em aberto(kWp)": 413.54,
           "Propostas ganhas(kWp)": 59.52
         },
         {
@@ -182,7 +182,7 @@
         },
         {
           "consultor": "Wilson",
-          "Propostas perdidas (kWp)": 0,
+          "Propostas perdidas (kWp)": 5299.52,
           "Propostas em aberto(kWp)": 0,
           "Propostas ganhas(kWp)": 0
         }
